@@ -1,0 +1,37 @@
+<html>
+<head>
+</head>
+<body>
+<div style="position: absolute; height: 100%; width: 60px; top: 0px; left: 0px; background-color: white; box-shadow: 0px 3px 5px lightgrey;"></div>
+
+<div style="position: absolute; height: 60px; width: 100%; top: 0px; left: 0px; background-color: white; box-shadow: 0px 3px 5px lightgrey;"></div>
+
+<div style="height: 150px; width: 270px; top: 100px; left: 90px; position: absolute; background-color: lightgray;"></div>
+<div style="height: 150px; width: 270px; top: 100px; left: 390px; position: absolute; background-color: lightgray;"></div>
+<div style="height: 150px; width: 270px; top: 100px; left: 690px; position: absolute; background-color: lightgray;"></div>
+<div style="height: 150px; width: 270px; top: 100px; left: 990px; position: absolute; background-color: lightgray;"></div>
+
+<div style="height: 150px; width: 270px; top: 300px; left: 90px; position: absolute; background-color: lightgray;"></div>
+<div style="height: 150px; width: 270px; top: 300px; left: 390px; position: absolute; background-color: lightgray;"></div>
+<div style="height: 150px; width: 270px; top: 300px; left: 690px; position: absolute; background-color: lightgray;"></div>
+<div style="height: 150px; width: 270px; top: 300px; left: 990px; position: absolute; background-color: lightgray;"></div>
+
+<div style="height: 150px; width: 270px; top: 500px; left: 90px; position: absolute; background-color: lightgray;"></div>
+<div style="height: 150px; width: 270px; top: 500px; left: 390px; position: absolute; background-color: lightgray;"></div>
+<div style="height: 150px; width: 270px; top: 500px; left: 690px; position: absolute; background-color: lightgray;"></div>
+<div style="height: 150px; width: 270px; top: 500px; left: 990px; position: absolute; background-color: lightgray;"></div>
+
+<div style="height: 3px; width: 100%; position: absolute;  top: 62px; left: 62px; background-color: blue;"></div>
+<script>
+var xhr = new window.XMLHttpRequest();
+    //Upload progress
+    xhr.upload.addEventListener("progress", function(evt) {
+      if (evt.lengthComputable) {
+        var percentComplete = evt.loaded / evt.total;
+        //Do something with upload progress
+        console.log(percentComplete);
+      }
+	  });
+</script>
+</body>
+</html>
