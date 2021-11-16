@@ -1,5 +1,7 @@
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+
 </head>
 <body>
 <div style="position: absolute; height: 100%; width: 60px; top: 0px; left: 0px; background-color: white; box-shadow: 0px 3px 5px lightgrey;"></div>
@@ -23,7 +25,9 @@
 
 <div style="height: 3px; width: 100%; position: absolute;  top: 62px; left: 62px; background-color: blue;"></div>
 <script>
-var xhr = new window.XMLHttpRequest();
+$.ajax({
+  xhr: function() {
+    var xhr = new window.XMLHttpRequest();
     //Upload progress
     xhr.upload.addEventListener("progress", function(evt) {
       if (evt.lengthComputable) {
@@ -31,7 +35,24 @@ var xhr = new window.XMLHttpRequest();
         //Do something with upload progress
         console.log(percentComplete);
       }
-	  });
+    }, false);
+    //Download progress
+    xhr.addEventListener("progress", function(evt) {
+      if (evt.lengthComputable) {
+        var percentComplete = evt.loaded / evt.total;
+        //Do something with download progress
+        console.log(percentComplete);
+      }
+    }, false);
+    return xhr;
+  },
+  type: 'POST',
+  url: "/",
+  data: {},
+  success: function(data) {
+    //Do something success-ish
+  }
+});
 </script>
 </body>
 </html>
