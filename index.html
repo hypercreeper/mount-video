@@ -1,11 +1,21 @@
-<html>
+<html style="font-family: sans-serif;">
 <head>
+<title>Mount Video</title>
+<link rel="icon" href="icon.png"></link>
 
+<script>
+var Airtable = require('airtable');
+Airtable.configure({
+    endpointUrl: 'https://api.airtable.com',
+    apiKey: 'keyUFwBQV1t116g63'
+});
+var base = Airtable.base('appjQMWuxo1wjYlFp');
+</script>
 </head>
 <body>
 <div style="position: absolute; height: 100%; width: 60px; top: 0px; left: 0px; background-color: white; box-shadow: 0px 3px 5px lightgrey;"></div>
 
-<div style="position: absolute; height: 60px; width: 100%; top: 0px; left: 0px; background-color: white; box-shadow: 0px 3px 5px lightgrey;"></div>
+<div style="position: absolute; height: 60px; width: 100%; top: 0px; left: 0px; background-color: white; box-shadow: 0px 3px 5px lightgrey;"><a href="index.html"><img src="icon.png" style="position: absolute; top: -9px; height: 80px; width: 80px;"></img><h3 style="position: absolute; left: 80px; top: 4px; color: blue;">Mount Video</h3></a><a style="position: absolute; left: 90%; top: 15%;" href="upload.html"><button style="height: 40px; width: 40px; border-radius: 50%; background-color: blue;"></button></a></div>
 
 <div>
 <div style="height: 150px; width: 270px; top: 100px; left: 90px; position: absolute; background-color: lightgray;"></div>
@@ -26,6 +36,7 @@
 
 <div style="height: 3px; width: 0%; position: absolute;  top: 62px; left: 62px; background-color: blue;" id="LoadBar"></div>
 <script>
+
 var i = 0;
 var timer = setInterval(loadprogressbar, 10);
 function loadprogressbar() {
@@ -42,6 +53,20 @@ setTimeout(function() {timer = setInterval(loadprogressbar, 0)}, 500);
 }
 document.getElementById("LoadBar").style.width = i + "%";
 }
+
+</script>
+<script>
+/*
+document.onreadystatechange = function () {
+            if (document.readyState === "complete") {
+                console.log(document.readyState);
+                document.getElementById("LoadBar").style.display = "none";
+            }
+        }
+
+*/
+</script>
+<script>
 </script>
 </body>
 </html>
