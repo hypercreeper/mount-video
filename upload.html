@@ -2,13 +2,15 @@
 <head>
 <title>Upload Mount Video</title>
 <link rel="icon" href="icon.png"></link>
+<script src="require.js"></script>
 <script>
-var Airtable = require('airtable');
+/*var Airtable = require(['airtable']);
 Airtable.configure({
     endpointUrl: 'https://api.airtable.com',
     apiKey: 'keyUFwBQV1t116g63'
 });
 var base = Airtable.base('appjQMWuxo1wjYlFp');
+*/
 </script>
 </head>
 <body>
@@ -17,9 +19,9 @@ var base = Airtable.base('appjQMWuxo1wjYlFp');
 <div style="position: absolute; height: 60px; width: 100%; top: 0px; left: 0px; background-color: white; box-shadow: 0px 3px 5px lightgrey;"><a href="index.html"><img src="icon.png" style="position: absolute; top: -9px; height: 80px; width: 80px;"></img><h3 style="position: absolute; left: 80px; top: 4px; color: blue;">Mount Video</h3></a></div>
 
 <p style="position: absolute; top: 45%; left: 50%;">Upload Video</p>
-<input type="file" id="uploadvideo" style="position: absolute; top: 50%; left: 50%;" accept="video/*">
+<input type="file" id="uploadvideo" onchange="uploadmedia('uploadvideo')" style="position: absolute; top: 50%; left: 50%;" accept="video/*">
 <p style="position: absolute; top: 55%; left: 50%;">Upload Thumbnail</p>
-<input type="file" id="uploadthumbnail" style="position: absolute; top: 60%; left: 50%;" accept="image/*">
+<input type="file" id="uploadthumbnail" onchange="uploadmedia('uploadthumbnail')" style="position: absolute; top: 60%; left: 50%;" accept="image/*">
 
 <div style="height: 3px; width: 0%; position: absolute;  top: 62px; left: 62px; background-color: blue;" id="LoadBar"></div>
 <script>
@@ -76,7 +78,7 @@ base('Mount Video').create([
     "fields": {
       "Title": "Test",
       "Description": "**Test**\n",
-	  "Video": 
+	  "Video": "ASd"
     }
   }
 ], function(err, records) {
